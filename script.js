@@ -1,11 +1,7 @@
-import html2canvas from 'html2canvas';
+const canvas = document.getElementById("glcanvas");
 
-html2canvas(documents.body, {
-    scale: 1,
-    useCORS: true,
-    logging: false,
-    allowTaint: false,
-    backgroundColor: null
-}).then(canvas => {
-    // Do something with the generated canvas
-});
+const gl = canvas.getContext("webgl2");
+
+if (!gl) {
+    alert("WebGL2 not supported");
+}
